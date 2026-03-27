@@ -1,4 +1,4 @@
-# 🎮 GammingHubba (formerly Nexus Tracker)
+# 🎮 GammingHubba 
 
 GammingHubba is a premium, full-stack web application designed to help you track your entire gaming library with style. It features an immersive glass-morphic UI, dynamic glow effects, and a seamlessly integrated backend database.
 
