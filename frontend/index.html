@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameHubba</title>
+  
+  <!-- Modern Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Add FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Decorative Background Elements -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="container">
+    <header class="glass-panel">
+      <div class="logo">
+        <i class="fa-solid fa-gamepad gradient-text"></i>
+        <h1>Game<span class="gradient-text">Hubba</span></h1>
+      </div>
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="search" placeholder="Search your library..." onkeyup="filterGames()">
+      </div>
+    </header>
+
+    <main>
+      <!-- Left Column: Add Game Form -->
+      <aside class="sidebar glass-panel">
+        <h2><i class="fa-solid fa-plus gradient-text"></i> Add Game</h2>
+        <div class="form">
+          <div class="input-group">
+            <label for="title">Title</label>
+            <input id="title" placeholder="e.g. Cyberpunk 2077" autocomplete="off">
+          </div>
+          <div class="input-group">
+            <label for="platform">Platform</label>
+            <input id="platform" placeholder="e.g. PC, PS5, Switch" autocomplete="off">
+          </div>
+          <div class="input-group">
+            <label for="genre">Genre</label>
+            <input id="genre" placeholder="e.g. RPG, Shooter" autocomplete="off">
+          </div>
+          <div class="input-group">
+            <label for="image">Image URL</label>
+            <input id="image" placeholder="https://..." autocomplete="off">
+          </div>
+          
+          <div class="row">
+            <div class="input-group flex-1">
+              <label for="status">Status</label>
+              <select id="status">
+                <option value="Playing">Playing</option>
+                <option value="Completed">Completed</option>
+                <option value="Wishlist">Wishlist</option>
+              </select>
+            </div>
+            <div class="input-group flex-1">
+              <label for="rating">Rating (1-5)</label>
+              <input id="rating" type="number" min="1" max="5" placeholder="5">
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="hoursPlayed">Hours Played</label>
+            <input id="hoursPlayed" type="number" min="0" placeholder="e.g. 120">
+          </div>
+          
+          <button class="primary-btn mt-3" onclick="addGame()">
+            Add to Library <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Right Column: Game Display -->
+      <section class="content">
+        <div class="filters glass-panel">
+          <div class="filter-tabs">
+            <button class="tab active" data-filter="" onclick="setFilter('', this)">All</button>
+            <button class="tab" data-filter="Playing" onclick="setFilter('Playing', this)">Playing</button>
+            <button class="tab" data-filter="Completed" onclick="setFilter('Completed', this)">Completed</button>
+            <button class="tab" data-filter="Wishlist" onclick="setFilter('Wishlist', this)">Wishlist</button>
+          </div>
+        </div>
+
+        <div id="games" class="games-grid">
+          <!-- Game cards will be injected here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
