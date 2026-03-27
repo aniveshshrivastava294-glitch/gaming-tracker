@@ -1,6 +1,6 @@
-# 🎮 GameHubba (formerly Nexus Tracker)
+# 🎮 GammingHubba (formerly Nexus Tracker)
 
-GameHubba is a premium, full-stack web application designed to help you track your entire gaming library with style. It features an immersive glass-morphic UI, dynamic glow effects, and a seamlessly integrated backend database.
+GammingHubba is a premium, full-stack web application designed to help you track your entire gaming library with style. It features an immersive glass-morphic UI, dynamic glow effects, and a seamlessly integrated backend database.
 
 ## ✨ Features
 
@@ -37,6 +37,6 @@ You only need to boot the backend server; the frontend is completely static!
 ## 🔐 Environment Variables (Optional)
 If you wish to save your games permanently instead of using the instant local memory server, create a `.env` file in the `/backend` folder:
 ```env
-MONGO_URI=mongodb+srv://<your_db_username>:<your_db_password>@cluster.mongodb.net/GameHubba?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<your_db_username>:<your_db_password>@cluster.mongodb.net/GammingHubba?retryWrites=true&w=majority
 PORT=5000
 ```

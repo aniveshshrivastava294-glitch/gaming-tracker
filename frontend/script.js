@@ -37,7 +37,7 @@ async function loadGames() {
     gamesContainer.innerHTML = `
       <div class="loading" style="color: #ef4444;">
         <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-        <p>Could not connect to the GameHubba servers. Please ensure the backend is running.</p>
+        <p>Could not connect to the GammingHubba servers. Please ensure the backend is running.</p>
       </div>
     `;
   }
@@ -91,7 +91,7 @@ async function addGame() {
 
 // Delete game
 async function deleteGame(id) {
-  if (!confirm("Are you sure you want to remove this game from your GameHubba Library?")) return;
+  if (!confirm("Are you sure you want to remove this game from your GammingHubba Library?")) return;
   
   try {
     const res = await fetch(`${API}/${id}`, {
