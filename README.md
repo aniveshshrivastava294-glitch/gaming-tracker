@@ -1,20 +1,21 @@
 # 🎮 GammingHubba 
 
-**GammingHubba** is a premium, full-stack web application designed to help you track your entire gaming library with style. Built with an immersive glass-morphic UI, dynamic glow effects, and a seamlessly integrated Node.js & MongoDB backend, this app provides the ultimate aesthetic experience for gamers.
+**GammingHubba** is a premium, full-stack web application designed to help you track your entire gaming library with style. Built with an immersive Cyberpunk Bento UI, dynamic glow effects, and a seamlessly integrated Node.js & MongoDB backend, this app provides the ultimate aesthetic experience for gamers.
 
 ---
 
 ## ✨ Features
 
-- **Beautiful Glassmorphism Design**: Experience a modern, vibrant dark-mode desktop and mobile UI with frosted-glass overlays and CSS neon accents.
-- **Library Tracking**: Add games including Title, Platform, Genre, Status (Playing, Completed, Wishlist), Rating, and Custom Image URLs.
-- **Hours Played Tracking**: Log the complete duration of your adventures with integrated visual metrics.
-- **Dynamic Filtering**: Instantly sort your grid by active status using the built-in fast-action tabs.
+- **Premium Dark Bento UI**: Experience a modern, vibrant dark-mode desktop and mobile UI featuring structured bento-box layouts, neon drop-shadows, and staggered entrance animations.
+- **Library Tracking**: Add games including Title, Rating (1-10 Scale), Custom Image URLs, and specifically curated Dropdowns for Platform (PC, Xbox, PlayStation, Switch) and Genre (RPG, Action, Indie, etc.) to keep your data perfectly organized without bloat.
+- **Interactive Status Tags**: Sort your grid instantly using tags: `Backlog`, `In Progress`, `Completed`, and `Dropped`.
+- **"Next Up" Queue**: Tag up to 3 priority games to automatically pin them to a dedicated, highlighted section at the top of your dashboard.
+- **Visual Progress HUD**: Game cards feature dynamic, color-shifting CSS progress bars ranging from 0% to 100% completion in real time.
 - **Zero-Config Database Fallback**: Out of the box, if you haven't set up a MongoDB Atlas URI, the app comes equipped with an auto-healing `mongodb-memory-server` that instantly boots up a local memory database behind the scenes. This ensures the backend works *instantly* upon cloning.
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: HTML5, Vanilla JavaScript, and extensive custom CSS.
+- **Frontend**: HTML5, Vanilla JavaScript, and extensive custom CSS (featuring `@keyframes` and HUD grid components).
 - **Backend Architecture**: Node.js & Express (Industry standard MVC structure: Models, Views, Controllers, Routes).
 - **Database**: MongoDB (Mongoose Schema mapping).
 

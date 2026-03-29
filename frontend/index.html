@@ -42,11 +42,27 @@
           </div>
           <div class="input-group">
             <label for="platform">Platform</label>
-            <input id="platform" placeholder="e.g. PC, PS5, Switch" autocomplete="off">
+            <select id="platform">
+              <option value="PC">PC</option>
+              <option value="PlayStation">PlayStation</option>
+              <option value="Xbox">Xbox</option>
+              <option value="Switch">Nintendo Switch</option>
+              <option value="Mobile/Handheld">Mobile / Handheld</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div class="input-group">
-            <label for="genre">Genre</label>
-            <input id="genre" placeholder="e.g. RPG, Shooter" autocomplete="off">
+            <label for="genre">Genre / Vibe</label>
+            <select id="genre">
+              <option value="Action/Adventure">Action / Adventure</option>
+              <option value="RPG">RPG</option>
+              <option value="FPS/Shooter">FPS / Shooter</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Indie">Indie</option>
+              <option value="Cozy/Casual">Cozy / Casual</option>
+              <option value="Platformer">Platformer</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div class="input-group">
             <label for="image">Image URL</label>
@@ -57,20 +73,52 @@
             <div class="input-group flex-1">
               <label for="status">Status</label>
               <select id="status">
-                <option value="Playing">Playing</option>
+                <option value="Backlog">Backlog</option>
+                <option value="In Progress">In Progress</option>
                 <option value="Completed">Completed</option>
-                <option value="Wishlist">Wishlist</option>
+                <option value="Dropped">Dropped</option>
               </select>
             </div>
             <div class="input-group flex-1">
-              <label for="rating">Rating (1-5)</label>
-              <input id="rating" type="number" min="1" max="5" placeholder="5">
+              <label for="rating">Personal Rating (1-10)</label>
+              <input id="rating" type="number" min="1" max="10" placeholder="10">
             </div>
           </div>
           
           <div class="input-group">
             <label for="hoursPlayed">Hours Played</label>
             <input id="hoursPlayed" type="number" min="0" placeholder="e.g. 120">
+          </div>
+          
+          <div class="row">
+            <div class="input-group flex-1">
+              <label for="completionGoal">Completion Goal</label>
+              <select id="completionGoal">
+                <option value="Main Story">Main Story</option>
+                <option value="Platinum/100%">Platinum / 100%</option>
+                <option value="Multiplayer/Casual">Multiplayer / Casual</option>
+              </select>
+            </div>
+            <div class="input-group flex-1">
+              <label for="progress">Progress % (0-100)</label>
+              <input id="progress" type="number" min="0" max="100" placeholder="e.g. 50">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-group flex-1">
+              <label for="startDate">Start Date (Optional)</label>
+              <input id="startDate" type="date">
+            </div>
+            <div class="input-group flex-1">
+              <label for="endDate">End Date (Optional)</label>
+              <input id="endDate" type="date">
+            </div>
+          </div>
+          
+          <div class="input-group flex-row align-center" style="flex-direction: row; gap: 0.8rem; margin-top: 0.5rem; align-items: center;">
+            <input type="checkbox" id="isNextUp" class="checkbox-beautiful">
+            <label for="isNextUp" style="margin: 0; cursor: pointer; color: var(--text-primary); font-size: 1rem; text-transform: none; letter-spacing: normal;">Add to "Next Up" Queue</label>
           </div>
           
           <button class="primary-btn mt-3" onclick="addGame()">
@@ -84,12 +132,19 @@
         <div class="filters glass-panel">
           <div class="filter-tabs">
             <button class="tab active" data-filter="" onclick="setFilter('', this)">All</button>
-            <button class="tab" data-filter="Playing" onclick="setFilter('Playing', this)">Playing</button>
+            <button class="tab" data-filter="Backlog" onclick="setFilter('Backlog', this)">Backlog</button>
+            <button class="tab" data-filter="In Progress" onclick="setFilter('In Progress', this)">In Progress</button>
             <button class="tab" data-filter="Completed" onclick="setFilter('Completed', this)">Completed</button>
-            <button class="tab" data-filter="Wishlist" onclick="setFilter('Wishlist', this)">Wishlist</button>
+            <button class="tab" data-filter="Dropped" onclick="setFilter('Dropped', this)">Dropped</button>
           </div>
         </div>
 
+        <div id="next-up-container" style="display: none; margin-bottom: 2rem;">
+          <h2 class="section-title"><i class="fa-solid fa-bolt gradient-text"></i> Next Up Queue</h2>
+          <div id="next-up-list" class="games-grid"></div>
+        </div>
+
+        <h2 class="section-title" style="margin-bottom: 1rem;"><i class="fa-solid fa-gamepad gradient-text"></i> Full Library</h2>
         <div id="games" class="games-grid">
           <!-- Game cards will be injected here -->
         </div>
